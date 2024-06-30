@@ -82,12 +82,40 @@ public class Parqueadero {
 
         System.out.print("Ingrese la placa del vehiculo >> ");
         String placa = lectura.nextLine();
-        System.out.println("Ingrese la marca del vehiculo >> ");
+        System.out.print("Ingrese la marca del vehiculo >> ");
         String marca = lectura.nextLine();
-        System.out.println("Ingrese el modelo >> ");
+        System.out.print("Ingrese el modelo >> ");
         String modelo = lectura.nextLine();
 
         Vehiculo vehiculo = new Vehiculo(placa,marca,modelo);
+
+        System.out.println("\n\tIngrese los datos del dueño");
+        System.out.print("Nombre >> ");
+        String nombre = lectura.nextLine();
+        System.out.print("Ingresa la cedula");
+        String cedula = lectura.nextLine();
+        System.out.print("Ingresa el celular >>");
+        String celular = lectura.nextLine();
+
+        Propietario propietario = new Propietario(nombre, cedula, celular);
+
+        System.out.println("\t\nDigite el lugar donde va a aparcar ");
+        System.out.print("Fila >> ");
+        int poscicionFila = lectura.nextInt();
+        lectura.nextLine();
+        System.out.print("Columna >> ");
+        int poscicionColumna = lectura.nextInt();
+
+
+        long tMinTotal = System.currentTimeMillis() / (60 * 1000);
+        int tMinCurrent = (int) (tMinTotal % (24 * 60));
+        int hours = tMinCurrent / 60;
+        int minutes = tMinCurrent % 60;
+
+        System.out.println("Hora: "+ hours);
+        System.out.println("Minutos "+ minutes);
+
+
 
         return vehiculo;
 
